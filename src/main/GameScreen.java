@@ -21,6 +21,9 @@ public class GameScreen extends JPanel {
         loadSprites();
 
         random = new Random();
+
+
+
     }
 
     private void loadSprites() {

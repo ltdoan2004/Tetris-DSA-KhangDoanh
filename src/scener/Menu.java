@@ -2,6 +2,7 @@ package scener;
 
 import main.Game;
 
+import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
@@ -39,7 +40,7 @@ public class Menu extends GameScene implements SceneMethods{
         InputStream is = getClass().getResourceAsStream("/spriteatlas.png");
 
         try {
-            img = read(is);
+            img = ImageIO.read(is);
         } catch (IOException e) {
             e.printStackTrace();
         }

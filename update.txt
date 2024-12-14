@@ -1,0 +1,6 @@
+4. Hệ thống ưu tiên hàng đợi (Priority Queue)
+Hiện tại:
+Trò chơi có cơ chế nextPiece nhưng chưa tối ưu việc dự đoán và quản lý các mảnh sắp tới.
+
+Đề xuất:
+Sử dụng Priority Queue hoặc Deque để lưu trữ danh sách các mảnh kế tiếp, đồng thời thêm cơ chế để người chơi thay đổi thứ tự mảnh với một lượng giới hạn

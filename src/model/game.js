@@ -1,5 +1,5 @@
-import Playfield from "./model/playfield";
-import Piece from "./model/piece.js";
+import Playfield from "./playfield.js";
+import Piece from "./piece.js";
 export default class Game {
     static points = {
         1: 40,

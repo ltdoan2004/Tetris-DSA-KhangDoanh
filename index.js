@@ -1,7 +1,7 @@
 // Import required modules
-import Game from "./src/game.js";
-import View from "./src/view.js";
-import Controller from "./src/controller.js"; 
+import Game from "./src/model/game.js";
+import View from "./src/view/view.js";
+import Controller from "./src/controller/controller.js"; 
 import VirtualKeyboard from "./src/mobile/virtualkeyboard.js";
 import Motion from "./src/mobile/motion.js";
 

@@ -126,7 +126,7 @@ Knowledge: HTML, CSS, JavaScript, Data Structures, Algorithms, UI design, Thesis
    
    Support: Google docs  
    
-   Direct: [Link](https://docs.google.com/document/d/1TFwiAUaH60dtllLl4o73U8S-MblfCmTzYT6-PXLCqNY/edit?usp=sharing)
+   Direct: [Link](https://docs.google.com/document/d/1UL2PQ6NYxNJV0banywiMYdnaBgEdpkfaFf6XX-Cc1yI/edit?usp=sharing)
    
 ## Installation <a name="installation"></a> 
 1. Step 1: Access to https://github.com/naulkun7/Tetris-Game

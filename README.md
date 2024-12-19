@@ -128,9 +128,9 @@ Knowledge: HTML, CSS, JavaScript, Data Structures, Algorithms, UI design, Thesis
    Direct: [Link](https://docs.google.com/document/d/1UL2PQ6NYxNJV0banywiMYdnaBgEdpkfaFf6XX-Cc1yI/edit?usp=sharing)
    
 ## Installation <a name="installation"></a> 
-1. Step 1: Access to https://github.com/naulkun7/Tetris-Game
+1. Step 1: Access to https://github.com/ltdoan2004/Tetris-DSA-KhangDoanh
 - Download and unzip the file
-- Clone following repository to your local  [Tetris-Game_repository](https://github.com/ltdoan2004/Tetris-DSA-KhangDoanh.git)     
+- Clone following repository to your local  [Tetris-DSA-KhangDoanh_repository](https://github.com/ltdoan2004/Tetris-DSA-KhangDoanh.git)     
     + VSCode: Copy the repository URL --> Open VSCode --> Ctrl + Shift + P --> Type "gitcl" --> Choose "Git Clone" and paste the URL in   
     + WebStorm: Copy the repository URL --> Open WebStorm --> Choose "Get from VCS" --> Paste the URL on your clipboard to "URL" field --> Press Enter or Clone
 2. Step 2: Choose index.html file in source code  --> Right click and click "Open with Live Server"

@@ -160,15 +160,15 @@ export default class Controller {
     const state = this._game.state;
 
     if (state.isGameOver) {
-      this._view.renderEndScreen(state);
-      this.pauseAudio();
-      this.playGameOverEffect();
+        this._view.renderEndScreen(state);
+        this.pauseAudio();
+        this.playGameOverEffect();
     } else if (!this._isPlaying) {
-      this._view.renderPauseScreen(state);
+        this._view.renderPauseScreen(state);
     } else {
-      this._view.renderMainScreen(state);
+        this._view.renderMainScreen(state);
     }
-  }
+}
 
   // Start the game timer
   _startTimer() {
@@ -231,62 +231,62 @@ export default class Controller {
 
   _handleKeyDown(event) {
     if (this._isWelcomeScreen && event.keyCode !== 13) {
-      return;
+        return;
     }
     // Check if the game is not playing and the key is not 'R' or 'M'
     if (!this._isPlaying && event.keyCode !== 82 && event.keyCode !== 77) {
-      return; // Do nothing if the game is paused and the key is not "R" or "M"
+        return; // Do nothing if the game is paused and the key is not "R" or "M"
     }
 
     switch (event.keyCode) {
-      case 37: // LEFT ARROW
-        this._game.movePieceLeft();
-        this._updateView();
-        break;
-      case 38: // UP ARROW
-        this._game.rotatePiece();
-        this.playRotateEffect();
-        this._updateView();
-        break;
-      case 39: // RIGHT ARROW
-        this._game.movePieceRight();
-        this._updateView();
-        break;
-      case 40: // DOWN ARROW
-        this._stopTimer();
-        this._game.movePieceDown();
-        this._updateView();
-        this._game._score += 1;
-        break;
-      case 32: // SPACE
-        if (this._isPlaying) {
-          this._game.dropPiece();
-          this.playLockEffect();
-          this._updateView();
-        }
-        break;
-      case 82: // R key
-        if (!this._isPlaying) {
-          // This allows restarting the game when it's paused
-          this.restartGame();
-        }
-        break;
-      case 67: // 'c' key
-        this._game._swapPiece();
-        this._updateView();
-        break;
-      case 85: // U key
-        if (this._isPlaying) {
-          this._game.undo();
-          this._updateView();
-        }
-        break;
-      case 77: // M key
-        // Removed check to allow muting/unmuting whether game is paused or not
-        this._toggleMute();
-        break;
+        case 37: // LEFT ARROW
+            this._game.movePieceLeft();
+            this._updateView();
+            break;
+        case 38: // UP ARROW
+            this._game.rotatePiece();
+            this.playRotateEffect();
+            this._updateView();
+            break;
+        case 39: // RIGHT ARROW
+            this._game.movePieceRight();
+            this._updateView();
+            break;
+        case 40: // DOWN ARROW
+            this._stopTimer();
+            this._game.movePieceDown();
+            this._updateView();
+            this._game._score += 1;
+            break;
+        case 32: // SPACE
+            if (this._isPlaying) {
+                this._game.dropPiece();
+                this.playLockEffect();
+                this._updateView();
+            }
+            break;
+        case 82: // R key
+            if (!this._isPlaying) {
+                // This allows restarting the game when it's paused
+                this.restartGame();
+            }
+            break;
+        case 67: // 'C' key
+            this._game._swapPiece();
+            this._updateView();
+            break;
+        case 85: // U key
+            if (this._isPlaying) {
+                this._game.undo();
+                this._updateView();
+            }
+            break;
+        case 77: // M key
+            this._toggleMute();
+            break;
     }
-  }
+}
+
 
   // Handle key up events
   _handleKeyUp(event) {

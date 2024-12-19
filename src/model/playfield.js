@@ -25,17 +25,17 @@ export default class Playfield extends Array {
 
   hasCollision(piece) {
     for (let block of piece) {
-      if (
-        block &&
-        (this._isOutOfBounds(block.x, block.y) ||
-          this._isOccupied(block.x, block.y))
-      ) {
-        return true;
-      }
+        if (
+            block &&
+            (this._isOutOfBounds(block.x, block.y) ||
+                this._isOccupied(block.x, block.y))
+        ) {
+            return true;
+        }
     }
 
     return false;
-  }
+}
 
   lockPiece(piece) {
     for (let block of piece) {

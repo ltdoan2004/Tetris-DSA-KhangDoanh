@@ -1,5 +1,6 @@
 import Playfield from "./playfield.js";
 import Piece from "./piece.js";
+import Queue from "./queue.js";
 export default class Game {
   static points = {
     1: 40,
@@ -13,7 +14,7 @@ export default class Game {
   _lines = 0;
   _topOut = false;
   _activePiece = null;
-  _nextPiece = null;
+  _nextPieces = new Queue();
   _ghostPiece = null;
   _scoreArr = [
     { _name: "", _score: 0 },
@@ -31,50 +32,61 @@ export default class Game {
 
   constructor(rows, columns) {
     this._playfield = new Playfield(rows, columns);
+    this._nextPieces = new Queue();
+    
+    // Initialize queue with 3 pieces
+    for (let i = 0; i < 3; i++) {
+        this._nextPieces.enqueue(new Piece());
+    }
+    
     this._updatePieces();
     this._updateGhostPiece();
     this._states = [];
     this.baseLevel = 0;
     this.linesPerLevel = 10;
-    this._speed = 1000; // Set initial speed to 1000 milliseconds
+    this._speed = 1000;
     this._holdPiece = null;
     this._hasSwapped = false;
-    this.setDifficulty = this.setDifficulty.bind(this); // Bind the method to the class instance
+    
+    this.setDifficulty = this.setDifficulty.bind(this);
     document.addEventListener("difficultySelected", (event) => {
-      this.setDifficulty(event.detail);
+        this.setDifficulty(event.detail);
     });
     this.gameLoop();
-  }
+}
 
+  
   // <----- Start Undo -----> //
   // Create a save to store state and push to the _stack[]
   saveState() {
     this._states.push({
-      score: this._score,
-      lines: this._lines,
-      topOut: this._topOut,
-      playfield: this._playfield.clone(),
-      activePiece: this._activePiece.clone(),
-      nextPiece: this._nextPiece.clone(),
-      ghostPiece: this._ghostPiece.clone(),
+        score: this._score,
+        lines: this._lines,
+        topOut: this._topOut,
+        playfield: this._playfield.clone(),
+        activePiece: this._activePiece.clone(),
+        nextPieces: this._nextPieces.clone(), // Save queue instead of single piece
+        ghostPiece: this._ghostPiece.clone(),
+        holdPiece: this._holdPiece ? this._holdPiece.clone() : null
     });
-  }
+}
 
   // Create a previous state to restore the game state from the _stack
   restoreState() {
     if (this._states.length > 0) {
-      const prevState = this._states.pop();
-      if (!this._playfield.hasCollision(prevState.activePiece)) {
-        this._score = prevState.score;
-        this._lines = prevState.lines;
-        this._topOut = prevState.topOut;
-        this._playfield = prevState.playfield;
-        this._activePiece = prevState.activePiece;
-        this._nextPiece = prevState.nextPiece;
-        this._ghostPiece = prevState.ghostPiece;
-      }
+        const prevState = this._states.pop();
+        if (!this._playfield.hasCollision(prevState.activePiece)) {
+            this._score = prevState.score;
+            this._lines = prevState.lines;
+            this._topOut = prevState.topOut;
+            this._playfield = prevState.playfield;
+            this._activePiece = prevState.activePiece;
+            this._nextPieces = prevState.nextPieces; // Restore queue
+            this._ghostPiece = prevState.ghostPiece;
+            this._holdPiece = prevState.holdPiece;
+        }
     }
-  }
+}
 
   undo() {
     this.restoreState();
@@ -133,20 +145,20 @@ export default class Game {
   // get curent state
   get state() {
     return {
-      name: this._name,
-      score: this._score,
-      level: this.level,
-      lines: this._lines,
-      playfield: this._playfield,
-      activePiece: this._activePiece,
-      nextPiece: this._nextPiece,
-      isGameOver: this._topOut,
-      ghostPiece: this._ghostPiece,
-      count: this._count,
-      holdPiece: this._holdPiece,
-      scoreArr: this._scoreArr,
+        name: this._name,
+        score: this._score,
+        level: this.level,
+        lines: this._lines,
+        playfield: this._playfield,
+        activePiece: this._activePiece,
+        nextPieces: this._nextPieces,
+        isGameOver: this._topOut,
+        ghostPiece: this._ghostPiece,
+        count: this._count,
+        holdPiece: this._holdPiece,
+        scoreArr: this._scoreArr,
     };
-  }
+}
   // reset to some attribute to play again
   reset() {
     this._count++;
@@ -162,21 +174,19 @@ export default class Game {
     this._activePiece.x -= 1;
 
     if (this._playfield.hasCollision(this._activePiece)) {
-      // check Collision
-      this._activePiece.x += 1;
+        this._activePiece.x += 1;
     } else {
-      this._updateGhostPiece();
+        this._updateGhostPiece();
     }
-  }
-  // Move Piece  to the right
+}
+
   movePieceRight() {
     this._activePiece.x += 1;
 
     if (this._playfield.hasCollision(this._activePiece)) {
-      // check Collision
-      this._activePiece.x -= 1;
+        this._activePiece.x -= 1;
     } else {
-      this._updateGhostPiece();
+        this._updateGhostPiece();
     }
   }
   // Move Piece downward
@@ -349,22 +359,27 @@ export default class Game {
   _updateName() {
     this._name = document.getElementById("name").value;
   }
-
+  _getNextPiece() {
+    const nextPiece = this._nextPieces.dequeue();
+    this._nextPieces.enqueue(new Piece());
+    return nextPiece;
+  }
   // Update the Pieces
   _updatePieces() {
-    this._activePiece = this._nextPiece || new Piece();
-    this._nextPiece = new Piece();
-    console.log("_updatePieces", this._activePiece, this._nextPiece);
+    this._activePiece = this._getNextPiece();
+    this._nextPieces.enqueue(new Piece()); // Add new piece to queue
+    
     this._activePiece.x = Math.floor(
-      (this._playfield.columns - this._activePiece.width) / 2
+        (this._playfield.columns - this._activePiece.width) / 2
     );
     this._activePiece.y = 0;
-    this._ghostPiece = new Piece( // Create a ghost Piece
-      this._activePiece.type,
-      this._activePiece.x,
-      this._activePiece.y
+    
+    this._ghostPiece = new Piece(
+        this._activePiece.type,
+        this._activePiece.x,
+        this._activePiece.y
     );
-  }
+}
 
   _updateGhostPiece() {
     // Update the position of the ghost piece to be directly below the active piece

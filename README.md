@@ -20,8 +20,7 @@ Click here and enjoy the game --> <a href="https://tetris-game-zeta.vercel.app/"
 7. [Installation](#installation)
 8. [References](#references)
 
-## Introduction <a name="introduction"></a> :smile:
-### Group: 9 :star_struck:
+## Introduction <a name="introduction"></a> :
 ### Our team member
 | Index | Name                   |     ID      |              Email               | Github account             |
 |:------|:-----------------------|:-----------:|:--------------------------------:|:---------------------------|
@@ -88,28 +87,25 @@ Main skills: Debugs, Team work
 Knowledge: HTML, CSS, JavaScript, Data Structures, Algorithms, UI design, Thesis report, Git and Github Usage
 
 ## UML Class Diagram <a name="uml"></a> 📄
-![image](./screenshot/Class_Diagram_Tetris.png)
+![Class_Diagram_Tetris](https://github.com/user-attachments/assets/80e84671-796a-4f0d-844c-4b7f253bdbec)
 
 ## Demo <a name="demo"></a>  🤖
 
 #### Start Screen 
-![image](./screenshot/game/startscreen.png)
+![startscreen](https://github.com/user-attachments/assets/9fc4b72e-a434-4416-bcfb-aa45a337c134)
 
 #### Set Difficulty 
-![image](./screenshot/game/difficult.png)
+![difficult](https://github.com/user-attachments/assets/146b3c69-d22c-4fb1-927b-d527d50032d1)
 
 #### Play Screen 
-![image](./screenshot/game/playing.png)
-![image](./screenshot/game/playing2.png)
+![playing](https://github.com/user-attachments/assets/3b81b787-2437-432c-9941-24968311a2e4)
+![playing2](https://github.com/user-attachments/assets/de59bf23-5dd5-470e-a5a2-761acf82c97b)
 
 #### Pause Screen 
-![image](./screenshot/game/pause.png)
+![pause](https://github.com/user-attachments/assets/24f094b2-9b56-4d5e-9152-e2a74c2479f3)
 
 #### End Screen 
-![image](./screenshot/game/gameover.png)
-
-#### Mobile 
-![image](./screenshot/game/mobile.jpg)
+![gameover](https://github.com/user-attachments/assets/bd21a8e3-e0a7-473d-8ae8-ea26a938a129)
 
 ### How to play 🎮
 #### Desktop 🖥️

@@ -66,7 +66,6 @@ Design Pattern:
 - Score board
 - Game Speed, Level, Set Difficulty
 - UI (Responsive)
-- Mobile Support (Ipad only)
 
 **Future feature:**
 - User Score Database

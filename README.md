@@ -71,7 +71,6 @@ Design Pattern:
 - User Score Database
 - Change color or theme by user
 - User ranking
-- Optimize for mobile user
 - More Game Animation
 
 ## Challenges <a name="challenges"></a> ✴️
@@ -97,11 +96,11 @@ Knowledge: HTML, CSS, JavaScript, Data Structures, Algorithms, UI design, Thesis
 ![difficult](https://github.com/user-attachments/assets/146b3c69-d22c-4fb1-927b-d527d50032d1)
 
 #### Play Screen 
-![playing](https://github.com/user-attachments/assets/3b81b787-2437-432c-9941-24968311a2e4)
-![playing2](https://github.com/user-attachments/assets/de59bf23-5dd5-470e-a5a2-761acf82c97b)
+![Screenshot 2024-12-19 142411](https://github.com/user-attachments/assets/cad16a97-9ee3-4404-96b1-fb1963cb18a6)
+![Screenshot 2024-12-19 142918](https://github.com/user-attachments/assets/5d5f9515-c8ed-4360-8c23-aa74e19b1299)
 
 #### Pause Screen 
-![pause](https://github.com/user-attachments/assets/24f094b2-9b56-4d5e-9152-e2a74c2479f3)
+![Screenshot 2024-12-19 142938](https://github.com/user-attachments/assets/d3e64df4-f346-46ec-ba33-cf66710278a8)
 
 #### End Screen 
 ![gameover](https://github.com/user-attachments/assets/bd21a8e3-e0a7-473d-8ae8-ea26a938a129)

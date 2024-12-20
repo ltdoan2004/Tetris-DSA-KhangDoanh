@@ -117,7 +117,7 @@ Knowledge: HTML, CSS, JavaScript, Data Structures, Algorithms, UI design, Thesis
 ## PowerPoint and Report <a name="powerPoint"></a> 📖
 ### PowerPoint
    Support: Google slides
-   ![image](./screenshot/Tetris_ppt.jpg)
+   ![Screenshot 2024-12-20 234814](https://github.com/user-attachments/assets/17b41493-a13e-4b24-ad18-a23937563caf)
    
    Direct: [Link](https://docs.google.com/presentation/d/1ZDQ58K7it-cXBDp4V5jee0RWbkUyxyEMX2Vxv2rsv9Q/edit#slide=id.gd11be4290f_2_228)
 

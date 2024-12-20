@@ -119,7 +119,7 @@ Knowledge: HTML, CSS, JavaScript, Data Structures, Algorithms, UI design, Thesis
    Support: Google slides
    ![image](./screenshot/Tetris_ppt.jpg)
    
-   Direct: [Link]([[https://docs.google.com/presentation/d/1NSvAn6voLTWPU3bcdAyV4bVFJXAI_HLM9rIiVeL4j0k/edit?usp=sharing](https://docs.google.com/presentation/d/1ZDQ58K7it-cXBDp4V5jee0RWbkUyxyEMX2Vxv2rsv9Q/edit?usp=sharing)](https://docs.google.com/presentation/d/1ZDQ58K7it-cXBDp4V5jee0RWbkUyxyEMX2Vxv2rsv9Q/edit#slide=id.gd11be4290f_2_228))
+   Direct: [Link](https://docs.google.com/presentation/d/1ZDQ58K7it-cXBDp4V5jee0RWbkUyxyEMX2Vxv2rsv9Q/edit#slide=id.gd11be4290f_2_228)
 
 ### Report
    
